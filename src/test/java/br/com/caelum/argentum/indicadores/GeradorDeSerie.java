@@ -17,4 +17,11 @@ public class GeradorDeSerie {
 		return new SerieTemporal(candles);
 	}
 	
+	private void anotherMethod(){
+		
+		int g; 
+		String w;
+		System.out.println("Just a test!");
+	}
+	
 }
