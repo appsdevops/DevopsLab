@@ -31,7 +31,7 @@ public class GeradorModeloGrafico {
 		
 		this.modeloGrafico.addSeries(chartSerie);
 		this.modeloGrafico.setLegendPosition("w");
-		this.modeloGrafico.setTitle("Indicadores");
+		this.modeloGrafico.setTitle("Indicadores de acompanhamento de eventos");
 	}
 	
 	public ChartModel getModeloGrafico(){

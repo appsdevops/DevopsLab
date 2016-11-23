@@ -7,12 +7,81 @@
     xmlns:p="http://primefaces.org/ui">
     
 <h:head>
-    <title>Argentum Web - DevOps </title>
+    <title>Pfizer-Demo</title>
+    <style>
+	*{
+	  margin: 0;
+	  padding: 0;
+	  font-family: 'Lato', sans-serif;
+	}
+	.menu{
+	  width: 770px;
+	  height: 66px;
+	  margin: 20px auto;
+	  position: relative;
+	}
+	.menu ul{
+	  list-style: none;
+	}
+	.menu li{
+	  float: left;
+	}
+	.menu li a{
+	  display: block;
+	  padding: 10px 0;
+	  font-size: 16px;
+	  text-transform: uppercase;
+	  text-decoration: none;
+	  color: #000;
+	  border-bottom: 1px solid #000;
+	  margin: 10px 10px 0 0;
+	  width:100px;
+	}
+	/* Add space between the third and fourth "li" to add the logo */
+	.menu li:nth-child(3){
+	  margin-right: 120px;
+	}
+	/* Remove the last margin-right */
+	.menu li:nth-child(6) a{
+	  margin-right: 0;
+	}
+	.menu li:nth-child(1n+4) a{
+	  text-align: right;
+	}
+	.logo{
+	  width: 100px;
+	  height: 64px;
+	  background-image: url(http://www.todoespacoonline.com/w/wp-content/uploads/2014/07/minha-logo-723x461.png);
+	  background-size: 100px 64px;
+	  position: absolute;
+	  left: 335px;
+	}
+	.site{
+	  text-align: center;
+	}    
+    </style>
 </h:head>
-
 <h:body>
-	<h1>Olá isso é um teste que via funcionar ??????</h1>
-	<h6>texto</h6>
+
+ 
+	<link href='http://fonts.googleapis.com/css?family=Lato:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+	  
+	<div class="menu">
+	  <ul>
+	    <li><a href="#">home</a></li>
+	    <li><a href="#">products</a></li>
+	    <li><a href="#">contact</a></li>
+	    <li><a href="#">item</a></li>
+	    <li><a href="#">support</a></li>
+	    <li><a href="#">about</a></li>
+	  </ul>
+	  <div class="logo"></div>
+	</div>
+	<div class="site">Meu site vem aqui</div>
+
+
+
+	<h1>Solução de controle de eventos</h1>
 	<h:form prependId="false">
 		
 		<p:panel>
@@ -29,24 +98,25 @@
 
 		<hr />
 		
-		<p:panel>
-			<h:panelGrid>
-				<h:outputLabel value="Média Móvel" />
-				<p:selectOneButton value="#{argentumBean.nomeMedia}" >
-					<f:selectItem itemLabel="Simples" itemValue="MediaMovelSimples"/>
-					<f:selectItem itemLabel="Ponderada" itemValue="MediaMovelPonderada"/>
-					<p:ajax update=":grafico" listener = "#{argentumBean.geraGrafico}"  />
-				</p:selectOneButton>
-			
-				<h:outputLabel value="Indicador Base" />
-				<p:selectOneButton value="#{argentumBean.nomeIndicadorBase}">
-					<f:selectItem itemLabel="Abertura" itemValue="IndicadorAbertura" />
-					<f:selectItem itemLabel="Fechamento" itemValue="IndicadorFechamento" />
-					<p:ajax update=":grafico" listener ="#{argentumBean.geraGrafico}"  />
-				</p:selectOneButton>
-			</h:panelGrid>
-        </p:panel>
-
+		<div style="display:none">
+			<p:panel>
+				<h:panelGrid>
+					<h:outputLabel value="Média Móvel" />
+					<p:selectOneButton value="#{argentumBean.nomeMedia}" >
+						<f:selectItem itemLabel="Simples" itemValue="MediaMovelSimples"/>
+						<f:selectItem itemLabel="Ponderada" itemValue="MediaMovelPonderada"/>
+						<p:ajax update=":grafico" listener = "#{argentumBean.geraGrafico}"  />
+					</p:selectOneButton>
+				
+					<h:outputLabel value="Indicador Base" />
+					<p:selectOneButton value="#{argentumBean.nomeIndicadorBase}">
+						<f:selectItem itemLabel="Abertura" itemValue="IndicadorAbertura" />
+						<f:selectItem itemLabel="Fechamento" itemValue="IndicadorFechamento" />
+						<p:ajax update=":grafico" listener ="#{argentumBean.geraGrafico}"  />
+					</p:selectOneButton>
+				</h:panelGrid>
+	        </p:panel>
+		</div>
 		<hr />
 		
 		<p:chart id="grafico" type="line" model="#{argentumBean.modeloGrafico}"></p:chart>
