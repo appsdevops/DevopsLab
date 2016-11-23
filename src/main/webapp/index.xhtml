@@ -81,7 +81,7 @@
 		<h1>Solução De Controle De Eventos</h1>
 		<h:form prependId="false">
 			
-			<p:panel style="display:none" >
+			<p:panel>
 	            <h:outputText value="Filtrar por período:"  style="margin-right:10px" />
 	            <p:inputMask id="filtroDataDe"  style="width:100px;" placeholder="De" mask="99/99/9999" value="#{argentumBean.filtroDataDe}">
 	            	<f:convertDateTime pattern="dd/MM/yyyy" />
@@ -95,7 +95,7 @@
 	
 			<hr />
 			
-				<p:panel>
+				<p:panel style="display:none">
 					<h:panelGrid>
 						<h:outputLabel value="Média Móvel" />
 						<p:selectOneButton value="#{argentumBean.nomeMedia}" >
